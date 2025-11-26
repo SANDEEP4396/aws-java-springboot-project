@@ -1,0 +1,20 @@
+EC2
+"Elastic" "Compute" "Cloud" -> Is a web service that lets you launch and manage virtual servers, and they call it as instances.
+It delivers secure, on-demand and scalable compute capacity. We can add or Remove servers within minutes and pay for only the
+resources we use.
+
+Elastic: Scalable
+Compute:Compute Power
+Cloud: Infra
+
+An AMI contains the operating system, application server, and applications for your instance.
+If you don't see a suitable AMI below, use the search field or choose Browse more AMIs.
+
+Once the instance is created we SSH into it to connect to the VM. Securely connect to the remote server.
+We need secret Key Pair -> Create it while creating instance.
+
+Security rules:
+Rule list to access the server. Provides the entry point to the application. I.e Ports,
+SSH -> Port number 22
+HTTP -> Port number 8080
+These acts like two doors. Basically a group of rule acting like firewall to access the APP.
