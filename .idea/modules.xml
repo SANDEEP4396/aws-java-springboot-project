@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/aws-java-springboot-project.iml" filepath="$PROJECT_DIR$/.idea/aws-java-springboot-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AWS-HandsOn.iml" filepath="$PROJECT_DIR$/.idea/modules/AWS-HandsOn.iml" group="AWS-HandsOn" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AWS-HandsOn_main.iml" filepath="$PROJECT_DIR$/.idea/modules/AWS-HandsOn_main.iml" group="AWS-HandsOn" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AWS-HandsOn_test.iml" filepath="$PROJECT_DIR$/.idea/modules/AWS-HandsOn_test.iml" group="AWS-HandsOn" />
     </modules>
   </component>
 </project>
