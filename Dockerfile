@@ -1,8 +1,4 @@
-FROM node:20-alpine AS build
-# Install OpenJDK 21 + build tools
-RUN apk add --no-cache openjdk21-jdk bash curl git
-ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk
-ENV PATH="${JAVA_HOME}/bin:${PATH}"
+FROM eclipse-temurin:21-jdk-alpine AS build
 
 WORKDIR /workspace
 
@@ -20,10 +16,12 @@ RUN ./gradlew --no-daemon clean build -x test
 
 
 # -------- Runtime --------
-FROM alpine:20-alpine AS runtime
+FROM alpine:3.20 AS runtime
+
 RUN apk add --no-cache openjdk21-jre
 ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
 
 WORKDIR /app
 
@@ -36,4 +34,4 @@ EXPOSE 8080
 ENV SPRING_PROFILES_ACTIVE=dev
 
 # Run the app
-CMD ["sh", "-c", "java -jar /app/app.jar --spring.profiles.active=${SPRING_PROFILES_ACTIVE}"]
+CMD ["sh","-c","exec java -XX:+UseContainerSupport -XX:MaxRAMPercentage=75 -jar /app/app.jar --spring.profiles.active=${SPRING_PROFILES_ACTIVE}"]
